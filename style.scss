@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+// Colors
+$color-brand: #5865f2;
+$color-brand-gradient: linear-gradient(90deg, #8ea1e1, #7289da);
+$color-greyple: #99aab5;
+$color-dark-not-black: #2c2f33;
+$color-focus-border: #00b0f4;
+$color-status-green: #43b581;
+$color-text-link: #00b0f4;
+$color-off-white: #f6f6f6;
+$color-white: #fff;
+$color-not-quite-black: #23272a;
+$color-not-quite-black-rgb: 35, 39, 42;
+$color-black: #000;
+$color-ekko-red: #de2761;
+
+// Fonts - But these seem to cost money!
+$cheap-primary: 'Poppins'; // My free alternative, until I find the ones below
+$font-primary: 'Whitney';
+$font-display: 'Ginto Normal';
+$font-headling: 'Ginto Nord';
+$font-monospace: 'Menlo';
+$font-glitch: 'ArchivoBlack';
+$font-cursive: 'Reenie Beanie';
+
+// Etc
+$page-max-width: 1260px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Utility Classes
+
+// Container to ensure contents stay centered and user-friendly widths
+.container {
+  max-width: $page-max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: auto;
+}
+
+// Our default Flex container; centers on both axes
+.flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Default Button style
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: $color-not-quite-black;
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+
+  // Discord buttons obtain a shadow when hovered
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  // Discord buttons obtain an aqua border when tabbed to
+  &:focus-visible {
+    outline: 2px solid aqua;
+  }
+}
+
+// Global Styling
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.4;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+//  Keep image within its container
+img {
+  width: 100%;
+}
+
+// Invite Section
+#invite-section {
+  padding: 5rem 0;
+
+  .invite-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      grid-column: 1 / span 4;
+    }
+
+    .content {
+      grid-column: 1 / span 4;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .invite-grid {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr;
+
+      img {
+        grid-column: 1 / span 4;
+      }
+
+      .content {
+        grid-column: 5 / span 4;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .invite-grid {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr;
+
+      img {
+        grid-column: 1 / span 7;
+      }
+
+      .content {
+        grid-column: 9 / span 4;
+      }
+    }
+  }
+}
+
+// Hanging Section
+#hanging-section {
+  padding: 5rem 0;
+  background-color: $color-off-white;
+
+  .hanging-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      grid-column: 1 / span 4;
+    }
+
+    .content {
+      grid-column: 1 / span 4;
+
+      h3 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hanging-grid {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr;
+
+      img {
+        grid-column: 5 / span 4;
+      }
+
+      .content {
+        grid-column: 1 / span 4;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hanging-grid {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr;
+
+      img {
+        grid-column: 6 / span 7;
+      }
+
+      .content {
+        grid-column: 1 / span 4;
+      }
+    }
+  }
+}
+
+// Community Section
+#community-section {
+  padding: 5rem 0;
+
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      grid-column: 1 / span 4;
+    }
+
+    .content {
+      grid-column: 1 / span 4;
+
+      h4 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .community-grid {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr;
+
+      img {
+        grid-column: 1 / span 4;
+      }
+
+      .content {
+        grid-column: 5 / span 4;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .community-grid {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr;
+
+      img {
+        grid-column: 1 / span 7;
+      }
+
+      .content {
+        grid-column: 9 / span 4;
+      }
+    }
+  }
+}
+
+// Tech Section
+#tech-section {
+  padding: 5rem 0;
+  background-color: $color-off-white;
+  text-align: center;
+
+  h5 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1024px) {
+  }
+}
