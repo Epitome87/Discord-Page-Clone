@@ -57,12 +57,12 @@ $page-max-width: 1260px;
 // Default Button style
 .btn {
   text-align: center;
-  font-family: inherit;
+  font: inherit;
   font-size: 1.25rem;
   display: inline-block;
   color: $color-white;
   background-color: $color-not-quite-black;
-  padding: 20px 40px;
+  padding: 1rem 2rem;
   margin: 0.5rem;
   border-radius: 25px;
   cursor: pointer;
@@ -105,10 +105,25 @@ a {
   background-color: $color-brand;
   color: $color-white;
 
+  .nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links {
+    visibility: hidden;
+  }
+
   .btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
+    color: $color-black;
     background-color: $color-white;
+
+    &:hover {
+      color: $color-brand;
+    }
 
     a {
       color: $color-black;
@@ -125,7 +140,7 @@ a {
   }
 
   ul {
-    display: flex;
+    // display: flex;
     gap: 1.5rem;
 
     a {
@@ -134,19 +149,50 @@ a {
       }
     }
   }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      visibility: visible;
+    }
+
+    ul {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 1024px) {
+  }
 }
 
 /* Hero Section */
 #hero-section {
-  padding: 5rem 0;
+  padding: 2rem 0 5rem 0;
   position: relative;
   color: $color-white;
   background-color: $color-brand;
 
+  .btn {
+  }
+
+  .btn--download {
+    color: $color-black;
+    background-color: $color-white;
+
+    &:hover {
+      color: $color-brand;
+    }
+  }
+
+  .btn--open {
+    &:hover {
+      background-color: $color-dark-not-black;
+    }
+  }
+
   .hero-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 2fr 1fr;
+    // grid-template-rows: 2fr 1fr;
     justify-content: center;
     align-items: center;
 
@@ -184,6 +230,8 @@ a {
   }
 
   @media (min-width: 1024px) {
+    text-align: center;
+
     .hero-grid {
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: 1fr;
@@ -223,11 +271,12 @@ a {
       grid-column: 1 / span 4;
 
       h2 {
-        font-size: 3rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
   }
@@ -258,6 +307,14 @@ a {
 
       .content {
         grid-column: 9 / span 4;
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -283,11 +340,12 @@ a {
       grid-column: 1 / span 4;
 
       h3 {
-        font-size: 3rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
   }
@@ -342,11 +400,12 @@ a {
       grid-column: 1 / span 4;
 
       h4 {
-        font-size: 3rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
   }
@@ -389,11 +448,12 @@ a {
   text-align: center;
 
   h5 {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   @media (min-width: 768px) {
@@ -403,12 +463,54 @@ a {
   }
 }
 
+/* Journey Section */
+#journey-section {
+  background-color: $color-off-white;
+  text-align: center;
+
+  h6 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    background-color: $color-brand;
+
+    &:hover {
+      background-color: rgba($color-brand, 0.85);
+    }
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  .btn--windows {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Footer */
 footer {
   background-color: $color-dark-not-black;
   color: $color-white;
+  padding: 3rem 0.5rem;
+
+  ul {
+    padding: 1rem;
+  }
 
   a {
     color: $color-white;
+    border-bottom: 1px solid transparent;
 
     &:hover {
       border-bottom: 1px solid $color-white;
@@ -447,4 +549,9 @@ footer {
       grid-template-columns: repeat(4, 1fr);
     }
   }
+}
+
+/* Font Awesome Stuff */
+i {
+  font-size: 1.5rem;
 }
